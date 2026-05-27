@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice Login | Rui Candles</title>
+    <meta name="description" content="Secure login for Rui Candles backoffice administration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <main class="login-container">
+        <div class="glass-panel">
+            <div class="brand">
+                <div class="logo">RC</div>
+                <h1>Backoffice</h1>
+                <p>Welcome back, please enter your credentials.</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username" placeholder="admin">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password" placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span class="btn-text">Sign In</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            </form>
+            
+            <div id="error-message" class="error-message">Invalid credentials. Please try again.</div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

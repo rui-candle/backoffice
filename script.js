@@ -50,3 +50,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Global callback for Google Sign-In
+window.handleCredentialResponse = (response) => {
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.classList.remove('show');
+    
+    // In a real application, you would send response.credential to your Cloudflare Worker here
+    console.log("Encoded JWT ID token: " + response.credential);
+    
+    // Simulate sending to Cloudflare Worker
+    fetch('https://backoffice.rui-candle.workers.dev/login/google', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token: response.credential })
+    })
+    .then(res => {
+        if (res.ok) {
+            // Redirect to backoffice dashboard
+            errorMessage.style.color = '#10b981';
+            errorMessage.style.borderLeftColor = '#10b981';
+            errorMessage.style.background = 'rgba(16, 185, 129, 0.1)';
+            errorMessage.textContent = 'Google Login Successful!';
+            errorMessage.classList.add('show');
+        } else {
+            throw new Error('Authentication failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error during Google Sign-In:', error);
+        errorMessage.style.color = '';
+        errorMessage.style.borderLeftColor = '';
+        errorMessage.style.background = '';
+        errorMessage.textContent = 'Google Authentication failed. Please try again.';
+        errorMessage.classList.add('show');
+    });
+};

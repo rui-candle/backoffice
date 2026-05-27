@@ -249,6 +249,34 @@ body {
     to { transform: rotate(360deg); }
 }
 
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--panel-border);
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* Google Sign-In */
+.g_id_signin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
 /* Error Message */
 .error-message {
     margin-top: 16px;

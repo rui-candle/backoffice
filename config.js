@@ -4,8 +4,8 @@
 //  Find them at: https://supabase.com/dashboard → Project Settings → API
 // ============================================================
 
-const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co';   // ← replace
-const SUPABASE_ANON_KEY = 'YOUR_ANON_PUBLIC_KEY';             // ← replace
+const SUPABASE_URL = 'https://khyjbpuqckxbqubjxatk.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_1E-lKzHGtVRolPiBCVqmLQ_sPj-jVes';
 
 // Initialise the Supabase client (available globally as `supabase`)
 const { createClient } = supabase;
